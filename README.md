@@ -2,6 +2,29 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Modification for [Create React App 5.x](https://github.com/facebook/create-react-app):
+
+Install [craco](https://github.com/gsoft-inc/craco) to override the webpack config without running `npm run eject`.
+
+```bash
+npm install @craco/craco@7.0.0-alpha.3 --save
+```
+
+Update the existing calls to `react-scripts` in the `scripts` section of your `package.json` file to use the `craco` CLI:
+
+```diff
+/* package.json */
+
+"scripts": {
+-   "start": "react-scripts start",
++   "start": "craco start",
+-   "build": "react-scripts build",
++   "build": "craco build"
+-   "test": "react-scripts test",
++   "test": "craco test"
+}
+```
+
 ## Available Scripts
 
 In the project directory, you can run:
